@@ -14,15 +14,13 @@
            switch($method) {
 
                 case "get":
-                    return $this->value[$fieldName];
+                    return (isset($this->value[$fieldName])) ? $this->value[$fieldName] : null ;
                 break;
 
                 case "set";
                     $this->values[$fieldName] = $args[0];
                 break;    
            }
-
-           
 
         }
 
