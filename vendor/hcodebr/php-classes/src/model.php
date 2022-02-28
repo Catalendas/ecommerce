@@ -14,7 +14,7 @@
            switch($method) {
 
                 case "get":
-                    return (isset($this->value[$fieldName])) ? $this->value[$fieldName] : null ;
+                    return $this->value[$fieldName];
                 break;
 
                 case "set";

@@ -95,12 +95,12 @@
            
             $results = $sql->select("CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword , :desemail, :nrphone, :inadmin)", array(
                 ":iduser"=>$this->getiduser(),
-                ":desperson"=>utf8_decode($this->getdesperson()),
+                ":desperson"=>$this->getdesperson(),
                 ":deslogin"=>$this->getdeslogin(),
-                ":despassword"=>User::getpasswordHash($this->getdespassword()),
+                ":despassword"=>$this->getdespassword(),
                 ":desemail"=>$this->getdesemail(),
                 ":nrphone"=>$this->getnrphone(),
-                ":inadmin"=>$this->getinadmin()
+                ":inadmin"=>$this->getinadmin() 
             ));
 
             $this->setData($results[0]);
@@ -117,6 +117,7 @@
 
         }
 
+        /*
         public static function getForgot($email) {
             $sql = new Sql();
 
@@ -203,5 +204,5 @@
                 ":password"=>$password,
                 ":iduser"=>$this->getiduser()
             ));
-        }
+        }*/
     }
